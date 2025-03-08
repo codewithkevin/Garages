@@ -6,6 +6,7 @@ import Button from "./button";
 import { ThemedText } from "../ThemedText";
 import { greetingMessage } from "@/helpers";
 import {
+  AntDesign,
   FontAwesome,
   Ionicons,
   MaterialCommunityIcons,
@@ -71,16 +72,12 @@ export default function Header({ headerHeight }: { headerHeight: number }) {
             backgroundColor: "rgba(255, 255, 255, 0.14)",
             backdropFilter: "blur(10px)",
             borderColor: "rgba(255, 255, 255, 0.14)",
-            width: wp(11),
-            height: wp(11),
+            width: wp(13),
+            height: wp(13),
           }}
           variant="outline"
         >
-          <MaterialCommunityIcons
-            name="bell-badge-outline"
-            size={wp(4)}
-            color="black"
-          />
+          <AntDesign name="wechat" size={wp(5)} color="white" />
         </Button>
       </View>
 
