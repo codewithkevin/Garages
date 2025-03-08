@@ -14,6 +14,7 @@ import {
 import { categoryData } from "@/__mockData/category.mock";
 import { primaryColor, zincColors } from "@/constants/Colors";
 import { regionsData } from "@/__mockData/regions.mock";
+import { router } from "expo-router";
 
 export default function Header({ headerHeight }: { headerHeight: number }) {
   const { wp, hp, scaleFontSize } = useResponsiveScreen();
@@ -67,6 +68,7 @@ export default function Header({ headerHeight }: { headerHeight: number }) {
           {greetingMessage()}
         </ThemedText>
         <Button
+          onPress={() => router.push("/chat/chat-preview")}
           style={{
             borderRadius: 30,
             backgroundColor: "rgba(255, 255, 255, 0.14)",
