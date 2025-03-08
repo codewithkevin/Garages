@@ -26,6 +26,26 @@ export default function UserLayout() {
           headerShown: false,
         }}
       />
+      <Stack.Screen
+        name="chat/chat-preview"
+        options={{
+          title: "Chats",
+          headerSearchBarOptions: {
+            placeholder: "Search",
+          },
+          headerBackButtonDisplayMode: "generic",
+          headerBackTitle: "Back",
+          headerLargeTitle: false,
+        }}
+      />
+      <Stack.Screen
+        name="chat/chat-details"
+        options={{
+          headerShown: true,
+          headerLargeTitle: false,
+          title: "Chat Details",
+        }}
+      />
     </Stack>
   );
 }

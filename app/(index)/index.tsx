@@ -8,6 +8,8 @@ import {
   useColorScheme,
   Image,
   Animated,
+  NativeSyntheticEvent,
+  NativeScrollEvent,
 } from "react-native";
 import React, { useRef, useState, useEffect } from "react";
 import { useResponsiveScreen } from "@/hooks/useResponsiveScreen";
@@ -44,7 +46,7 @@ export default function HomeScreen() {
     [{ nativeEvent: { contentOffset: { y: scrollY } } }],
     {
       useNativeDriver: false,
-      listener: (event) => {
+      listener: (event: NativeSyntheticEvent<NativeScrollEvent>) => {
         const currentScrollY = event.nativeEvent.contentOffset.y;
         const isScrollingUp = currentScrollY < lastScrollY.current;
 
