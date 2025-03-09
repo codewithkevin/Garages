@@ -1,4 +1,11 @@
-import { View, Text, ScrollView, StyleSheet, Keyboard } from "react-native";
+import {
+  View,
+  Text,
+  ScrollView,
+  StyleSheet,
+  Keyboard,
+  Alert,
+} from "react-native";
 import React from "react";
 import { LinearGradient } from "expo-linear-gradient";
 import { useResponsiveScreen } from "@/hooks/useResponsiveScreen";
@@ -19,8 +26,14 @@ import { router } from "expo-router";
 import TextInput from "../text-input";
 
 export default function Header({ headerHeight }: { headerHeight: number }) {
-  const { wp, hp, scaleFontSize } = useResponsiveScreen();
+  const { wp, scaleFontSize } = useResponsiveScreen();
 
+  const logoutAlert = () => {
+    Alert.alert("Logout", "Are you sure you want to logout?", [
+      { text: "Yes", onPress: () => console.log("Yes") },
+      { text: "No", onPress: () => {}, style: "cancel" },
+    ]);
+  };
   return (
     <LinearGradient
       colors={[
@@ -54,6 +67,7 @@ export default function Header({ headerHeight }: { headerHeight: number }) {
         ]}
       >
         <Button
+          onPress={logoutAlert}
           style={{
             borderRadius: 30,
             backgroundColor: "rgba(255, 255, 255, 0.14)",
