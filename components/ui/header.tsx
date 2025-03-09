@@ -1,4 +1,4 @@
-import { View, Text, ScrollView, StyleSheet } from "react-native";
+import { View, Text, ScrollView, StyleSheet, Keyboard } from "react-native";
 import React from "react";
 import { LinearGradient } from "expo-linear-gradient";
 import { useResponsiveScreen } from "@/hooks/useResponsiveScreen";
@@ -8,6 +8,7 @@ import { greetingMessage } from "@/helpers";
 import {
   AntDesign,
   FontAwesome,
+  FontAwesome5,
   Ionicons,
   MaterialCommunityIcons,
 } from "@expo/vector-icons";
@@ -15,6 +16,7 @@ import { categoryData } from "@/__mockData/category.mock";
 import { primaryColor, zincColors } from "@/constants/Colors";
 import { regionsData } from "@/__mockData/regions.mock";
 import { router } from "expo-router";
+import TextInput from "../text-input";
 
 export default function Header({ headerHeight }: { headerHeight: number }) {
   const { wp, hp, scaleFontSize } = useResponsiveScreen();
@@ -62,7 +64,7 @@ export default function Header({ headerHeight }: { headerHeight: number }) {
           }}
           variant="outline"
         >
-          <Ionicons name="person-outline" size={wp(4)} color="black" />
+          <FontAwesome5 name="user-alt" size={wp(4)} color="white" />
         </Button>
         <ThemedText type="subtitle" style={{ color: "inherit" }}>
           {greetingMessage()}
@@ -149,51 +151,30 @@ export default function Header({ headerHeight }: { headerHeight: number }) {
           type="defaultSemiBold"
           style={{ color: "inherit", paddingLeft: wp(4) }}
         >
-          Locations
+          Search
         </ThemedText>
 
-        <ScrollView
-          horizontal
-          showsHorizontalScrollIndicator={false}
-          contentContainerStyle={{
-            paddingLeft: 0,
-            marginLeft: 0,
-          }}
-          style={{
-            left: 0,
-          }}
-        >
-          {regionsData.regions_of_ghana.map((region) => (
-            <Button
-              key={region}
-              style={{
-                borderRadius: 30,
-                backgroundColor: "rgba(255, 255, 255, 0.14)",
-                backdropFilter: "blur(10px)",
-                borderColor: "rgba(255, 255, 255, 0.14)",
-                marginLeft: region ? wp(4) : 0,
-              }}
-              variant="outline"
-            >
-              <View
-                style={{
-                  flexDirection: "row",
-                  alignItems: "center",
-                  gap: wp(1),
-                }}
-              >
-                <FontAwesome
-                  name="dot-circle-o"
-                  size={wp(4)}
-                  color={zincColors[200]}
-                />
-                <Text style={{ color: "black", fontSize: scaleFontSize(12) }}>
-                  {region}
-                </Text>
-              </View>
-            </Button>
-          ))}
-        </ScrollView>
+        <View style={{ paddingHorizontal: wp(4) }}>
+          <TextInput
+            variant="ghost"
+            containerStyle={{
+              borderRadius: 20,
+              backgroundColor: "white",
+              backdropFilter: "blur(10px)",
+              borderColor: "rgba(255, 255, 255, 0.14)",
+              height: wp(11),
+            }}
+            placeholder="Search for a service"
+            rightIcon={
+              <Ionicons name="search" size={wp(4)} color={zincColors[700]} />
+            }
+            onPress={() => {
+              router.push("/search");
+            }}
+            autoFocus={false}
+            editable={false}
+          />
+        </View>
       </View>
     </LinearGradient>
   );

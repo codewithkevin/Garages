@@ -46,6 +46,13 @@ export default function UserLayout() {
           title: "Chat Details",
         }}
       />
+      <Stack.Screen
+        name="search"
+        options={{
+          headerShown: true,
+        }}
+      />
+      <Stack.Screen name="filtered-list" />
     </Stack>
   );
 }

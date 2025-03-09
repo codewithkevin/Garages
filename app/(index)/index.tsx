@@ -1,32 +1,19 @@
 import {
   View,
-  Text,
   StyleSheet,
-  ScrollView,
-  TouchableOpacity,
   FlatList,
-  useColorScheme,
-  Image,
   Animated,
   NativeSyntheticEvent,
   NativeScrollEvent,
+  Keyboard,
 } from "react-native";
 import React, { useRef, useState, useEffect } from "react";
 import { useResponsiveScreen } from "@/hooks/useResponsiveScreen";
-import { LinearGradient } from "expo-linear-gradient";
 import { ThemedText } from "@/components/ThemedText";
-import { categoryData } from "@/__mockData/category.mock";
 import Button from "@/components/ui/button";
-import {
-  FontAwesome,
-  AntDesign,
-  Entypo,
-  MaterialIcons,
-  MaterialCommunityIcons,
-} from "@expo/vector-icons";
-import { primaryColor, zincColors } from "@/constants/Colors";
-import { regionsData } from "@/__mockData/regions.mock";
-import { greetingMessage, useGetThemeColor } from "@/helpers";
+import { AntDesign } from "@expo/vector-icons";
+import { zincColors } from "@/constants/Colors";
+import { useGetThemeColor } from "@/helpers";
 import HorizontalCard from "@/components/ui/horizontal-card";
 import Header from "@/components/ui/header";
 
