@@ -16,6 +16,7 @@ import { zincColors } from "@/constants/Colors";
 import { useGetThemeColor } from "@/helpers";
 import HorizontalCard from "@/components/ui/horizontal-card";
 import Header from "@/components/ui/header";
+import { router } from "expo-router";
 
 export default function HomeScreen() {
   const { isWhiteTheme } = useGetThemeColor();
@@ -105,6 +106,7 @@ export default function HomeScreen() {
                   : zincColors[1000],
                 borderColor: isWhiteTheme ? zincColors[50] : zincColors[1000],
               }}
+              onPress={() => router.push("/(index)/filtered-list")}
             >
               <AntDesign
                 name="arrowright"
