@@ -39,3 +39,4 @@ bun.lock
 *.tsbuildinfo
 
 app-example
+.qodo

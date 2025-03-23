@@ -178,6 +178,11 @@ export default function Header({ headerHeight }: { headerHeight: number }) {
               borderColor: "rgba(255, 255, 255, 0.14)",
               height: wp(11),
             }}
+            inputStyle={{
+              fontSize: scaleFontSize(14),
+              fontWeight: "600",
+            }}
+            size="md"
             placeholder="Search for a service"
             rightIcon={
               <Ionicons name="search" size={wp(4)} color={zincColors[700]} />
