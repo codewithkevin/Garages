@@ -188,7 +188,7 @@ export default function Header({ headerHeight }: { headerHeight: number }) {
               <Ionicons name="search" size={wp(4)} color={zincColors[700]} />
             }
             onPress={() => {
-              router.push("/search");
+              router.push("/(index)/search");
             }}
             autoFocus={false}
             editable={false}

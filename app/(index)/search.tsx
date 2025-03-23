@@ -17,7 +17,9 @@ export default function SearchScreen() {
             placeholder: "Search",
             onSearchButtonPress: () => {
               router.push(
-                `/filtered-list?searchText=${encodeURIComponent(searchText)}`
+                `/(index)/filtered-list?searchText=${encodeURIComponent(
+                  searchText
+                )}`
               );
             },
           },
