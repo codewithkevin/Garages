@@ -1,4 +1,3 @@
-import { View, Text } from "react-native";
 import React from "react";
 import { Stack } from "expo-router";
 
@@ -46,6 +45,13 @@ export default function UserLayout() {
           title: "Chat Details",
         }}
       />
+      <Stack.Screen
+        name="search"
+        options={{
+          headerShown: true,
+        }}
+      />
+      <Stack.Screen name="filtered-list" />
     </Stack>
   );
 }

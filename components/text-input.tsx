@@ -16,7 +16,7 @@ type InputSize = "sm" | "md" | "lg";
 
 interface TextInputProps extends Omit<RNTextInputProps, "style"> {
   label?: string;
-  error?: string;
+  error?: string | any;
   variant?: InputVariant;
   size?: InputSize;
   containerStyle?: ViewStyle;
@@ -48,7 +48,7 @@ export const TextInput: React.FC<TextInputProps> = ({
     { height?: number; fontSize: number; padding: number }
   > = {
     sm: { fontSize: 16, padding: 8 },
-    md: { height: 50, fontSize: 16, padding: 14 },
+    md: { height: 50, fontSize: 26, padding: 14 },
     lg: { height: 55, fontSize: 32, padding: 16 },
   };
 
@@ -132,7 +132,9 @@ export const TextInput: React.FC<TextInputProps> = ({
 
 const styles = StyleSheet.create({
   label: {
-    marginBottom: 4,
+    marginBottom: 6,
+    fontWeight: "bold",
+    fontSize: 17,
   },
   error: {
     color: "#ef4444",

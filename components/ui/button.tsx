@@ -12,7 +12,7 @@ import { primaryColor, zincColors } from "@/constants/Colors";
 import { ThemedText } from "../ThemedText";
 
 type ButtonVariant = "filled" | "outline" | "ghost";
-type ButtonSize = "sm" | "md" | "lg";
+type ButtonSize = "sm" | "md" | "lg" | "xl";
 
 interface ButtonProps {
   onPress?: () => void;
@@ -45,6 +45,7 @@ export const Button: React.FC<ButtonProps> = ({
     sm: { height: 36, fontSize: 14, padding: 12 },
     md: { height: 44, fontSize: 16, padding: 16 },
     lg: { height: 55, fontSize: 18, padding: 20 },
+    xl: { height: 60, fontSize: 20, padding: 24 },
   };
 
   const getVariantStyle = () => {
